@@ -1,0 +1,10 @@
+if ["$#" > 0]
+for i in "$@"
+ do
+        echo Site ID :$i
+        echo "***********************************************************************************************"
+        curl 'https://www.dev-pwcacsf.acsitefactory.com/api/v1/sites/'$i'/backup' -X POST -H 'Content-Type: application/json' -v -u srinivasan.gunasekaran:5ec1cd0b6edea5f8c0380c85b8cebb5312c0bdac
+        echo "\n"
+        echo "***********************************************************************************************"
+done
+echo All Site IDs Passed are: "$*"
